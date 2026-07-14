@@ -16,7 +16,7 @@ import { useNodeSpecs } from "@/components/flow/renderer";
 import { FlowEdge, FlowNode, NodeType } from "@/components/flow/types";
 import { HireExpertNudge } from "@/components/lead-forms/HireExpertNudge";
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { useOnboarding } from '@/context/OnboardingContext';
 import { WorkflowConfigurations } from '@/types/workflow-configurations';
@@ -675,6 +675,10 @@ function RenderWorkflow({
 
                     <Sheet open={isTesterSheetOpen} onOpenChange={setIsTesterSheetOpen}>
                         <SheetContent side="right" className="w-full max-w-none p-0 sm:max-w-xl xl:hidden">
+                            <SheetHeader className="sr-only">
+                                <SheetTitle>Agent tester</SheetTitle>
+                                <SheetDescription>Test your voice agent over chat or a web call.</SheetDescription>
+                            </SheetHeader>
                             <WorkflowTesterPanel
                                 workflowId={workflowId}
                                 initialContextVariables={templateContextVariables}
